@@ -1,0 +1,1 @@
+docker run -d --name dev-inventario-db -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=db_inventario mysql:latest 
