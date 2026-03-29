@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "warehouse")
+public class Warehouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,14 +26,8 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String sku;
-
-    @Column(nullable = false)
-    private int stock;
-
     @ManyToOne
-    @JoinColumn(name = "warehouse_id", nullable = false)
-    private Warehouse inWarehouse;
+    @JoinColumn(name = "branch_id", nullable = false)
+    private Branch inBranch;
 
 }
