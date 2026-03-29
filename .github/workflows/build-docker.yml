@@ -20,5 +20,6 @@ jobs:
         
       - name: push image to docker hub
         run: |
+          docker login -u xdainz -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push xdainz/api-inventario:latest
       
