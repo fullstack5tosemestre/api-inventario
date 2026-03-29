@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "Dockerfile"
+      - "src/**"
+
 jobs:
   publish-image:
     runs-on: ubuntu-latest
@@ -14,12 +18,11 @@ jobs:
         run: |
           chmod +x ./mvnw
           ./mvnw clean package -DskipTests
-      
+
       - name: build image
         run: docker build -t xdainz/api-inventario:latest .
-        
+
       - name: push image to docker hub
         run: |
           docker login -u xdainz -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push xdainz/api-inventario:latest
-      
