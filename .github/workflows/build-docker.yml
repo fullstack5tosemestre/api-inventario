@@ -11,7 +11,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: build .jar file
-        run: ./mvnw clean package -DskipTests
+        run: |
+          chmod +x ./mvnw
+          ./mvnw clean package -DskipTests
       
       - name: build image
         run: docker build -t xdainz/api-inventario:latest .
