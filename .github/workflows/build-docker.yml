@@ -1,0 +1,22 @@
+name: Build and publish to docker hub
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: build .jar file
+        run: ./mvnw clean package -DskipTests
+      
+      - name: build image
+        run: docker build -t xdainz/api-inventario:latest .
+        
+      - name: push image to docker hub
+        run: |
+          docker push xdainz/api-inventario:latest
+      
