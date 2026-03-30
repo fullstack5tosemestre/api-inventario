@@ -1,0 +1,28 @@
+name: Run tests on pull requests
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+    paths:
+      - "src/**"
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: run tests
+        run: |
+          chmod +x ./mvnw
+          ./mvnw clean test
+      - name: verify build
+        run: |
+          chmod +x ./mvnw
+          ./mvnw clean verify
+      - name: clean
+        run: |
+          chmod +x ./mvnw
+          ./mvnw clean
