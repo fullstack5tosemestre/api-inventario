@@ -18,5 +18,11 @@ jobs:
         run: |
           chmod +x ./mvnw
           ./mvnw clean test
+      - name: verify build
+        run: |
+          chmod +x ./mvnw
           ./mvnw clean verify
+      - name: clean
+        run: |
+          chmod +x ./mvnw
           ./mvnw clean
