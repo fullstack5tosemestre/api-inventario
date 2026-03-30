@@ -17,7 +17,7 @@ jobs:
       - name: build .jar file
         run: |
           chmod +x ./mvnw
-          ./mvnw clean package -DskipTests
+          ./mvnw clean package
 
       - name: build image
         run: docker build -t xdainz/api-inventario:latest .
