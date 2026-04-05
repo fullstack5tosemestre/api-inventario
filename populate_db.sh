@@ -1,0 +1,1 @@
+docker exec -i inventario-db  mysql -u root db_inventario < db_inventario.sql
