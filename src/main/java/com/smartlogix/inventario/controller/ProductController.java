@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.smartlogix.inventario.model.Product;
@@ -51,6 +52,11 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
+    }
+
+    @GetMapping("/by-id/")
+    public ResponseEntity<List<Product>> getProductsById(@RequestParam List<Long> ids) {
+        return new ResponseEntity<>(productService.findAllById(ids), HttpStatus.OK);
     }
 
     @PostMapping
