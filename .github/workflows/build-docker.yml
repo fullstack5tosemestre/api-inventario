@@ -6,6 +6,7 @@ on:
     paths:
       - "Dockerfile"
       - "src/**"
+  workflow_dispatch:
 
 jobs:
   publish-image:
