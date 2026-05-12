@@ -58,6 +58,7 @@ jobs:
           docker pull ${{ secrets.ECR_REPO_URL_API_INVENTARIO }}:latest && \
           docker rm -f inventario || true && \
           docker run -d \
+          -p 8081:8081 \
           -e SPRING_DATASOURCE_URL=jdbc:mysql://${{ secrets.EC2_DB_PRIVATE_IP }}:3306/db_inventario \
           -e SPRING_DATASOURCE_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} \
           --name inventario \
