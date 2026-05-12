@@ -1,4 +1,4 @@
-name: Build and publish to docker hub
+name: Build and deploy to AWS
 on:
   push:
     branches:
@@ -56,7 +56,7 @@ jobs:
           ec2-user@${{ secrets.EC2_API_INVENTARIO_PRIVATE_IP }} \
           'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 089485767547.dkr.ecr.us-east-1.amazonaws.com && \
           docker pull ${{ secrets.ECR_REPO_URL_API_INVENTARIO }}:latest && \
-          docker rm -f db || true && \
+          docker rm -f inventario || true && \
           docker run -d \
           -e SPRING_DATASOURCE_URL=${{ secrets.EC2_DB_PRIVATE_IP }}:3306/db_inventario \
           -e SPRING_DATASOURCE_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} \
