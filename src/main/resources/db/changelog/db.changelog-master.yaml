@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/01-create-branch-table.yaml
+  - include:
+      file: db/changelog/02-create-warehouse-table.yaml
+  - include:
+      file: db/changelog/03-create-product-table.yaml
+  - include:
+      file: db/changelog/04-seed-branches.yaml
+  - include:
+      file: db/changelog/05-seed-warehouses.yaml
+  - include:
+      file: db/changelog/06-seed-products.yaml

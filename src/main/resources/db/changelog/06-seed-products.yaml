@@ -1,0 +1,155 @@
+databaseChangeLog:
+  - changeSet:
+      id: 06-seed-products
+      author: smartlogix
+      changes:
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Laptop Dell Inspiron 15"
+              - column:
+                  name: sku
+                  value: "TECH-LAP-001"
+              - column:
+                  name: stock
+                  valueNumeric: 25
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 1
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Monitor LG 27 pulgadas"
+              - column:
+                  name: sku
+                  value: "TECH-MON-001"
+              - column:
+                  name: stock
+                  valueNumeric: 40
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 1
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Teclado Mecánico Redragon"
+              - column:
+                  name: sku
+                  value: "TECH-TEC-001"
+              - column:
+                  name: stock
+                  valueNumeric: 60
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 1
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Mouse Logitech MX Master"
+              - column:
+                  name: sku
+                  value: "TECH-MOU-001"
+              - column:
+                  name: stock
+                  valueNumeric: 75
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 2
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Auriculares Sony WH-1000XM5"
+              - column:
+                  name: sku
+                  value: "TECH-AUR-001"
+              - column:
+                  name: stock
+                  valueNumeric: 30
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 2
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Silla Gamer DXRacer"
+              - column:
+                  name: sku
+                  value: "MOB-SIL-001"
+              - column:
+                  name: stock
+                  valueNumeric: 15
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 2
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Escritorio Ergonómico"
+              - column:
+                  name: sku
+                  value: "MOB-ESC-001"
+              - column:
+                  name: stock
+                  valueNumeric: 10
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 3
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Webcam Logitech C920"
+              - column:
+                  name: sku
+                  value: "TECH-CAM-001"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 3
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Cable HDMI 2.0 3m"
+              - column:
+                  name: sku
+                  value: "TECH-CAB-001"
+              - column:
+                  name: stock
+                  valueNumeric: 120
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 4
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: name
+                  value: "Hub USB-C 7 en 1"
+              - column:
+                  name: sku
+                  value: "TECH-HUB-001"
+              - column:
+                  name: stock
+                  valueNumeric: 85
+              - column:
+                  name: warehouse_id
+                  valueNumeric: 4

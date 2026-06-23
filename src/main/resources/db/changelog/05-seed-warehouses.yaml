@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-seed-warehouses
+      author: smartlogix
+      changes:
+        - insert:
+            tableName: warehouse
+            columns:
+              - column:
+                  name: name
+                  value: "Bodega Principal"
+              - column:
+                  name: branch_id
+                  valueNumeric: 1
+        - insert:
+            tableName: warehouse
+            columns:
+              - column:
+                  name: name
+                  value: "Bodega Secundaria"
+              - column:
+                  name: branch_id
+                  valueNumeric: 1
+        - insert:
+            tableName: warehouse
+            columns:
+              - column:
+                  name: name
+                  value: "Bodega Norte"
+              - column:
+                  name: branch_id
+                  valueNumeric: 2
+        - insert:
+            tableName: warehouse
+            columns:
+              - column:
+                  name: name
+                  value: "Bodega Sur"
+              - column:
+                  name: branch_id
+                  valueNumeric: 3

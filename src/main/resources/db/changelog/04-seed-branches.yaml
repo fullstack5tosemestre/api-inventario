@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 04-seed-branches
+      author: smartlogix
+      changes:
+        - insert:
+            tableName: branch
+            columns:
+              - column:
+                  name: name
+                  value: "Casa Matriz"
+              - column:
+                  name: direccion
+                  value: "Av. Providencia 1234, Santiago"
+        - insert:
+            tableName: branch
+            columns:
+              - column:
+                  name: name
+                  value: "Sucursal Norte"
+              - column:
+                  name: direccion
+                  value: "Av. Recoleta 890, Santiago"
+        - insert:
+            tableName: branch
+            columns:
+              - column:
+                  name: name
+                  value: "Sucursal Sur"
+              - column:
+                  name: direccion
+                  value: "Gran Avenida 456, San Miguel"
