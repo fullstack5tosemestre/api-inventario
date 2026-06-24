@@ -53,6 +53,18 @@ class ProductServiceTest {
     }
 
     @Test
+    void findAllByIdDelegatesToRepository() {
+        List<Long> ids = List.of(1L, 2L);
+        List<Product> expected = List.of(sampleProduct(1L), sampleProduct(2L));
+        when(productRepository.findAllById(ids)).thenReturn(expected);
+
+        List<Product> result = productService.findAllById(ids);
+
+        assertSame(expected, result);
+        verify(productRepository).findAllById(ids);
+    }
+
+    @Test
     void findByIdDelegatesToRepository() {
         Optional<Product> expected = Optional.of(sampleProduct(2L));
         when(productRepository.findById(2L)).thenReturn(expected);

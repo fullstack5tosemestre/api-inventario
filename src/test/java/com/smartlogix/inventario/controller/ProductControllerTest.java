@@ -88,6 +88,16 @@ class ProductControllerTest {
     }
 
     @Test
+    void getProductsByIdReturnsOkWithRequestedProducts() throws Exception {
+        Product product = sampleProduct(1L, "Notebook", "SKU-1", 15);
+        when(productService.findAllById(List.of(1L, 2L))).thenReturn(List.of(product));
+
+        mockMvc.perform(get("/api/v1/products/by-id/").param("ids", "1", "2"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].id").value(1L));
+    }
+
+    @Test
     void createProductReturnsCreated() throws Exception {
         Product request = sampleProduct(null, "Keyboard", "SKU-2", 8);
         Product saved = sampleProduct(2L, "Keyboard", "SKU-2", 8);
