@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-branch-table
+      author: smartlogix
+      changes:
+        - createTable:
+            tableName: branch
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: direccion
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
